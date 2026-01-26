@@ -25,6 +25,8 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "./node_modules/flexboxgrid/dist/flexboxgrid.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -87,6 +89,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3992f702-c3d9-4b7a-85dc-6c1356ea9ba8"
   }
 }
