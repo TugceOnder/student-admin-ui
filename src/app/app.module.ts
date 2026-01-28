@@ -90,7 +90,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   schemas :[
     CUSTOM_ELEMENTS_SCHEMA
