@@ -1,0 +1,8 @@
+.p-1 {
+  padding: 20px 0;
+}
+
+/* Angular Material inputların hepsi tam genişlik */
+mat-form-field {
+  width: 100%;
+}
