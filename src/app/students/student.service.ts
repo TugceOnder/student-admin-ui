@@ -13,4 +13,9 @@ private baseApiUrl= 'https://localhost:44381'
   getStudents():Observable<Student[]>{
     return this.httpClient.get<Student[]>(this.baseApiUrl+'/Students')
   }
+
+  
+  getStudent(studentId:string | null):Observable<Student>{
+    return this.httpClient.get<Student>(this.baseApiUrl+'/students/'+studentId)
+  }
 }
