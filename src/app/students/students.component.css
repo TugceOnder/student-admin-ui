@@ -1,15 +1,18 @@
-table{
-    width: 100;
+.p-1 {
+  padding: 20px 0;
 }
-.search-input{
-    outline:none;
-    border: 1px solid #ccc;
-    padding: 8px 10px;
-    border-radius: 21px;
+
+mat-form-field {
+  width: 100%;
 }
-.search-input :active{
-    border: 1px solid #bbb;
+
+.right {
+  text-align: right;
 }
-.search-input:focus{
-    border:1px solid #aaa;
+
+.back-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }

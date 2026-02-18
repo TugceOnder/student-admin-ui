@@ -4,7 +4,7 @@ import { Gender } from "./gender.model"
 export interface Student{
     id :String,
     firstName:string,
-    lastname:string,
+    lastName:string,
 dateofBirth:string,
 email:string,
 mobile:number,

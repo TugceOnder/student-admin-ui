@@ -5,8 +5,6 @@
 </div>
 
 <div class="container">
-
-  <!-- Geri Dön butonu -->
   <div class="row p-1">
     <div class="col-xs-12 right">
       <a [routerLink]="['/students']"
@@ -19,10 +17,7 @@
     </div>
   </div>
 
-  <!-- Sayfa içeriği -->
   <div class="row">
-
-    <!-- SOL: Form -->
     <div class="col-xs-12 col-md-6">
       <form #studentDetailsForm="ngForm">
 
@@ -30,14 +25,18 @@
           <div class="col-xs-12 col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Ad</mat-label>
-              <input matInput placeholder="Ad">
+              <input matInput placeholder="Ad"
+                     [(ngModel)]="student.firstName"
+                     name="firstName">
             </mat-form-field>
           </div>
 
           <div class="col-xs-12 col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Soyad</mat-label>
-              <input matInput placeholder="Soyad">
+              <input matInput placeholder="Soyad"
+                     [(ngModel)]="student.lastName"
+                     name="lastname">
             </mat-form-field>
           </div>
         </div>
@@ -46,7 +45,9 @@
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Doğum Tarihi</mat-label>
-              <input matInput [matDatepicker]="picker">
+              <input matInput [matDatepicker]="picker"
+                     [(ngModel)]="student.dateofBirth"
+                     name="dateofBirth">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -57,14 +58,18 @@
           <div class="col-xs-12 col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Email</mat-label>
-              <input matInput placeholder="Email">
+              <input matInput placeholder="Email"
+                     [(ngModel)]="student.email"
+                     name="email">
             </mat-form-field>
           </div>
 
           <div class="col-xs-12 col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Telefon</mat-label>
-              <input matInput placeholder="Telefon">
+              <input matInput placeholder="Telefon"
+                     [(ngModel)]="student.mobile"
+                     name="mobile">
             </mat-form-field>
           </div>
         </div>
@@ -73,27 +78,31 @@
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Cinsiyet</mat-label>
-              <input matInput placeholder="Cinsiyet">
+              <input matInput placeholder="Cinsiyet"
+                     [(ngModel)]="student.gender.description"
+                     name="genderDescription">
             </mat-form-field>
           </div>
         </div>
 
-        <!-- Adres -->
         <div class="row">
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Adres</mat-label>
-              <textarea matInput rows="3" placeholder="Adres"></textarea>
+              <textarea matInput rows="3" placeholder="Adres"
+                        [(ngModel)]="student.address.physicalAddress"
+                        name="physicalAddress"></textarea>
             </mat-form-field>
           </div>
         </div>
 
-        <!-- Posta Kodu -->
         <div class="row">
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
-              <mat-label>Posta Kodu</mat-label>
-              <input matInput placeholder="Posta Kodu">
+              <mat-label>Posta Kodu / Posta Adresi</mat-label>
+              <input matInput placeholder="Posta"
+                     [(ngModel)]="student.address.postalAddress"
+                     name="postalAddress">
             </mat-form-field>
           </div>
         </div>
@@ -101,7 +110,8 @@
       </form>
     </div>
 
- 
-
+    <div class="col-xs-12 col-md-6">
+      Profil gelecek
+    </div>
   </div>
 </div>

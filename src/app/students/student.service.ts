@@ -7,15 +7,15 @@ import { Student } from '../models/api-models/student.model';
   providedIn: 'root'
 })
 export class StudentService {
-private baseApiUrl= 'https://localhost:44381'
-  constructor(private httpClient : HttpClient) { }
+  private baseApiUrl = 'https://localhost:44381';
 
-  getStudents():Observable<Student[]>{
-    return this.httpClient.get<Student[]>(this.baseApiUrl+'/Students')
+  constructor(private httpClient: HttpClient) {}
+
+  getStudents(): Observable<Student[]> {
+    return this.httpClient.get<Student[]>(`${this.baseApiUrl}/Students`);
   }
 
-  
-  getStudent(studentId:string | null):Observable<Student>{
-    return this.httpClient.get<Student>(this.baseApiUrl+'/students/'+studentId)
+  getStudent(studentId: string): Observable<Student> {
+    return this.httpClient.get<Student>(`${this.baseApiUrl}/Students/${studentId}`);
   }
 }
