@@ -4,8 +4,8 @@ import { Gender } from "./gender.model"
 export interface Student{
     id :String,
     firstName:string,
-    lastname:string,
-dateofBirth:string,
+    lastName:string,
+dateOfBirth:string,
 email:string,
 mobile:number,
 profileImageUrl:string,

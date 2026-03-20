@@ -9,71 +9,77 @@
   <!-- Geri Dön butonu -->
   <div class="row p-1">
     <div class="col-xs-12 right">
-      <a [routerLink]="['/students']"
-         mat-raised-button
-         color="primary"
-         class="back-btn">
+      <button mat-raised-button color="primary" class="back-btn" (click)="goBack()">
         <mat-icon>chevron_left</mat-icon>
         Geri Dön
-      </a>
+      </button>
     </div>
   </div>
 
-  <!-- Sayfa içeriği -->
   <div class="row">
-
-    <!-- SOL: Form -->
     <div class="col-xs-12 col-md-6">
       <form #studentDetailsForm="ngForm">
 
+        <!-- Ad / Soyad -->
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Ad</mat-label>
-              <input matInput placeholder="Ad">
+              <input matInput placeholder="Ad" [(ngModel)]="student.firstName" name="firstName">
             </mat-form-field>
           </div>
 
           <div class="col-xs-12 col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Soyad</mat-label>
-              <input matInput placeholder="Soyad">
+              <input matInput placeholder="Soyad" [(ngModel)]="student.lastName" name="lastname">
             </mat-form-field>
           </div>
         </div>
 
+        <!-- Doğum Tarihi -->
         <div class="row">
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Doğum Tarihi</mat-label>
-              <input matInput [matDatepicker]="picker">
+              <input
+                matInput
+                [matDatepicker]="picker"
+                [(ngModel)]="student.dateOfBirth"
+                name="dateofBirth">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
         </div>
 
+        <!-- Email / Telefon -->
         <div class="row">
           <div class="col-xs-12 col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Email</mat-label>
-              <input matInput placeholder="Email">
+              <input matInput placeholder="Email" [(ngModel)]="student.email" name="email">
             </mat-form-field>
           </div>
 
           <div class="col-xs-12 col-md-6">
             <mat-form-field appearance="outline">
               <mat-label>Telefon</mat-label>
-              <input matInput placeholder="Telefon">
+              <input matInput placeholder="Telefon" [(ngModel)]="student.mobile" name="mobile">
             </mat-form-field>
           </div>
         </div>
 
+        <!-- Cinsiyet -->
         <div class="row">
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Cinsiyet</mat-label>
-              <input matInput placeholder="Cinsiyet">
+              <mat-select [(ngModel)]="student.genderId" name="genderId">
+                <mat-option *ngFor="let gender of genderList" [value]="gender.id">
+                  {{ gender.description }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
         </div>
@@ -83,7 +89,9 @@
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Adres</mat-label>
-              <textarea matInput rows="3" placeholder="Adres"></textarea>
+              <textarea matInput rows="3" placeholder="Adres"
+                [(ngModel)]="student.address.physicalAddress"
+                name="physicalAddress"></textarea>
             </mat-form-field>
           </div>
         </div>
@@ -93,15 +101,18 @@
           <div class="col-xs-12">
             <mat-form-field appearance="outline">
               <mat-label>Posta Kodu</mat-label>
-              <input matInput placeholder="Posta Kodu">
+              <input matInput placeholder="Posta Kodu"
+                [(ngModel)]="student.address.postalAddress"
+                name="postalAddress">
             </mat-form-field>
           </div>
         </div>
-
+<div class="row">
+  <div class="col-xs-12">
+    <button mat-raised-button color="primary" (click)="onUpdate()">Kaydet</button>
+  </div>
+</div>
       </form>
     </div>
-
- 
-
   </div>
 </div>
